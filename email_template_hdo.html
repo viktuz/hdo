@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotelDO — Ofertas {{SEGMENTO_NOMBRE}} — {{FECHA}}</title>
+  <style>
+    @media only screen and (max-width:620px) {
+      .email-wrap { width:100%!important; }
+      .stat-cell  { display:block!important; width:100%!important;
+                    border-right:none!important; border-bottom:1px solid #e0e4ee!important; }
+      td, th      { font-size:12px!important; padding:8px 6px!important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;background:#eef0f4">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#eef0f4;padding:28px 0">
+  <tr><td align="center">
+  <table class="email-wrap" width="100%" cellpadding="0" cellspacing="0"
+         style="max-width:700px;width:100%;background:#ffffff;
+                border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,0.11)">
+
+    <!-- ══ HEADER ══ -->
+    <tr>
+      <td style="background:linear-gradient(140deg,#0d1535 0%,#151D4E 50%,#1c2f72 100%);
+                 padding:34px 32px 26px;text-align:center;
+                 border-radius:14px 14px 0 0;border-bottom:4px solid #F68527">
+        <img src="https://github.com/viktuz/hdo/blob/main/Despe%20HDO.png?raw=true"
+             alt="HotelDO" height="48"
+             style="display:block;margin:0 auto 14px" border="0">
+        <h1 style="margin:0 0 8px;color:#ffffff;font-size:25px;font-weight:800;letter-spacing:0.5px">
+          {{SEGMENTO_EMOJI}} OFERTAS DE LA SEMANA
+        </h1>
+        <p style="margin:0 0 10px;color:rgba(255,255,255,0.85);font-size:15px">
+          {{FECHA}} &nbsp;|&nbsp; {{PAIS}} &nbsp;|&nbsp;
+          <span style="background:rgba(246,133,39,0.22);color:#F68527;
+                       padding:3px 11px;border-radius:12px;font-size:13px;font-weight:700">
+            {{SEGMENTO_EMOJI}} {{SEGMENTO_NOMBRE}}
+          </span>
+        </p>
+        <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.45);
+                  letter-spacing:1.2px;text-transform:uppercase">{{SEGMENTO_DESTINOS}}</p>
+      </td>
+    </tr>
+
+    <!-- ══ BODY ══ -->
+    <tr><td style="padding:30px 32px">
+
+      <p style="margin:0 0 6px;font-size:15px;color:#333">¡Hola!</p>
+      <p style="margin:0 0 26px;font-size:15px;color:#444;line-height:1.65">
+        Te compartimos las <strong>mejores ofertas hoteleras activas</strong> para el segmento
+        <strong style="color:#151D4E">{{SEGMENTO_NOMBRE}}</strong>
+        disponibles hoy en {{PAIS}}.
+      </p>
+
+      <!-- STATS -->
+      <table width="100%" cellpadding="0" cellspacing="0"
+             style="margin-bottom:24px;background:#f7f8fc;
+                    border:1px solid #e3e6f0;border-radius:10px;overflow:hidden">
+        <tr>
+          <td class="stat-cell" width="33%"
+              style="padding:20px 16px;text-align:center;border-right:1px solid #e3e6f0">
+            <div style="font-size:30px;font-weight:800;color:#151D4E">{{STAT_NUM_PROMOS}}</div>
+            <div style="font-size:10px;color:#999;text-transform:uppercase;
+                        letter-spacing:1px;margin-top:5px">Promos activas</div>
+          </td>
+          <td class="stat-cell" width="33%"
+              style="padding:20px 16px;text-align:center;border-right:1px solid #e3e6f0">
+            <div style="font-size:30px;font-weight:800;color:#F68527">{{STAT_DESC_MAX}}%</div>
+            <div style="font-size:10px;color:#999;text-transform:uppercase;
+                        letter-spacing:1px;margin-top:5px">Descuento máx.</div>
+          </td>
+          <td class="stat-cell" width="33%"
+              style="padding:20px 16px;text-align:center">
+            <div style="font-size:22px;font-weight:800;color:#22a06b">{{STAT_DESC_RANGO}}</div>
+            <div style="font-size:10px;color:#999;text-transform:uppercase;
+                        letter-spacing:1px;margin-top:5px">Rango descuentos</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- VENTANAS GLOBALES -->
+      <div style="background:#EEF0F8;border-left:4px solid #151D4E;
+                  padding:14px 18px;margin-bottom:28px;border-radius:0 8px 8px 0">
+        <div style="font-size:13px;color:#151D4E;line-height:2">
+          <strong>📅 Resumen de Ventanas</strong><br>
+          Booking window: &nbsp;<strong>{{VENTANA_BOOKING_FROM}} al {{VENTANA_BOOKING_TO}}</strong><br>
+          Travel window: &nbsp;<strong>{{VENTANA_STAY_FROM}} al {{VENTANA_STAY_TO}}</strong><br>
+          Descuentos: &nbsp;<strong>Del {{STAT_DESC_RANGO}}</strong>
+        </div>
+      </div>
+
+      <!-- TABLA DE HOTELES -->
+      <h2 style="margin:0 0 14px;font-size:17px;color:#151D4E;
+                 border-bottom:3px solid #F68527;padding-bottom:8px">
+        🏨 Detalle de Ofertas — {{SEGMENTO_NOMBRE}}
+      </h2>
+      <table width="100%" cellpadding="0" cellspacing="0"
+             style="border-collapse:collapse;margin-bottom:30px;
+                    border:1px solid #e3e6f0;border-radius:10px;overflow:hidden">
+        <thead>
+          <tr style="background:#151D4E">
+            <th style="padding:12px 10px;text-align:left;font-size:11px;color:#e8c56d;
+                       text-transform:uppercase;letter-spacing:0.7px;width:38%">Hotel</th>
+            <th style="padding:12px;text-align:center;font-size:11px;color:#e8c56d;
+                       text-transform:uppercase;letter-spacing:0.7px;width:14%">Descuento</th>
+            <th style="padding:12px;text-align:center;font-size:11px;color:#e8c56d;
+                       text-transform:uppercase;letter-spacing:0.7px;width:24%">Booking Window</th>
+            <th style="padding:12px;text-align:center;font-size:11px;color:#e8c56d;
+                       text-transform:uppercase;letter-spacing:0.7px;width:24%">Travel Window</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{FILAS_HOTELES}}
+        </tbody>
+      </table>
+
+      <!-- FIRMA -->
+      <p style="margin:16px 0 4px;font-size:14px;color:#555">
+        Para cotizaciones, contactá a tu ejecutivo comercial.</p>
+      <p style="margin:0;font-size:14px;color:#444">
+        Saludos cordiales,<br>
+        <strong style="color:#151D4E">Equipo Comercial HotelDO</strong>
+      </p>
+
+    </td></tr>
+
+    <!-- ══ FOOTER ══ -->
+    <tr>
+      <td style="background:#0d1535;padding:18px 32px;text-align:center;
+                 border-radius:0 0 14px 14px;border-top:3px solid #F68527">
+        <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.8">
+          Generado automáticamente el {{FECHA}}<br>
+          Las promociones están sujetas a disponibilidad y pueden cambiar sin previo aviso.
+        </p>
+      </td>
+    </tr>
+
+  </table>
+  </td></tr>
+</table>
+
+</body>
+</html>
